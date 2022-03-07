@@ -10,12 +10,12 @@ package com.mycompany.csc325_oop_designreview_lab;
  * @author MoaathAlrajab
  */
 public class Student extends Human {
-    private double gpa;
-    private int credits;
+    protected double gpa; //protected because Freshman and Senior class need to access them in toString()
+    protected int credits;
     
-    public Student(String name, int age, int credits){
+    public Student(String name, short age, int credits){
         super(name, age);
-        if(credits < 0) throw new IllegalArgumentException("Credit requirements for class standing not met");
+        if(credits < 0) throw new IllegalArgumentException("Credit requirements for class standing not met"); //if the freshman or senior get passed an illegal number of credits, it fails
         else this.credits = credits;
     }
     
